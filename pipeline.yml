@@ -25,11 +25,10 @@ jobs:
     public: true
     serial: true
     plan:
+      - get: concourse-example
       - get: pull-request
         trigger: true
         version: every
-      - get: concourse-example
-      - get: pull-request
         params:
           list_changed_files: true
       - put: pull-request
