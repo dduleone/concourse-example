@@ -31,3 +31,6 @@ jobs:
       - get: concourse-example
       - task: run-task
         file: concourse-example/task.yml
+      - put: pull-request
+        params:
+          label: "tagged"
