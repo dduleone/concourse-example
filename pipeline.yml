@@ -17,6 +17,7 @@ resources:
     check_every: 1m
     source:
       repository: dduleone/concourse-example
+      repo: dduleone/concourse-example
       access_token: ((github-access-token))
 
 jobs:
