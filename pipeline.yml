@@ -29,6 +29,9 @@ jobs:
         trigger: true
         version: every
       - get: concourse-example
+      - get: pull-request
+        params:
+          list_changed_files: true
       - task: run-task
         file: concourse-example/task.yml
       - put: pull-request
