@@ -25,9 +25,15 @@ jobs:
     public: true
     serial: true
     plan:
+      - get: concourse-example
       - get: pull-request
         trigger: true
         version: every
-      - get: concourse-example
+        params:
+          list_changed_files: true
+      - put: pull-request
+        params:
+          label: "tagged"
+          status: "success"
       - task: run-task
         file: concourse-example/task.yml
