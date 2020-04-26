@@ -32,8 +32,8 @@ jobs:
       - get: pull-request
         params:
           list_changed_files: true
-      - task: run-task
-        file: concourse-example/task.yml
       - put: pull-request
         params:
           label: "tagged"
+      - task: run-task
+        file: concourse-example/task.yml
