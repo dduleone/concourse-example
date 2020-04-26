@@ -34,5 +34,7 @@ jobs:
       - put: pull-request
         params:
           label: "tagged"
+          path: "/"
+          status: "success"
       - task: run-task
         file: concourse-example/task.yml
