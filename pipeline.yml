@@ -1,0 +1,17 @@
+---
+resources:
+  - name: concourse-example
+    type: git
+    source:
+      uri: https://github.com/dduleone/concourse-example.git
+      branch: master
+
+jobs:
+  - name: run-script
+    public: true
+    serial: true
+    plan:
+      - get: concourse-example
+        trigger: true
+      - task: run-task
+        file: concourse-example/task.yml
