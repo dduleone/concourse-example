@@ -16,8 +16,8 @@ resources:
     type: pull-request
     check_every: 1m
     source:
-      uri: https://github.com/dduleone/concourse-example.git
-      branch: master
+      repository: dduleone/concourse-example
+      access_token: ((github-access-token))
 
 jobs:
   - name: run-script
